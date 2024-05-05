@@ -18,7 +18,14 @@ The `cdk.json` file tells the CDK Toolkit how to execute your app.
 # New libraries
 (
     npm install aws-sdk @types/aws-lambda @types/uuid --save-dev
+)
 
+# basic commands on terminal
+(
+    cdk list
+    cdk deploy --all
+    cdk diff ### difference between the real project and the actual state of the aws's resources
+    cdk destroy --all ### sugestive name
 )
 
 
