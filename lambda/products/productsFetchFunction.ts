@@ -1,3 +1,4 @@
+import { Lambda } from "aws-cdk-lib/aws-ses-actions";
 import { APIGatewayProxyEvent, APIGatewayProxyResult, Context } from "aws-lambda";
 
 export async function handler(event:APIGatewayProxyEvent,
@@ -7,6 +8,8 @@ export async function handler(event:APIGatewayProxyEvent,
     //Obtendo os principais ids para fazer rastreamento
     const lambdaRequestId = context.awsRequestId
     const apiRequestId = event.requestContext.requestId
+
+    console.log(`API Gateway RequestId: ${apiRequestId} - Lambda RequestId: ${lambdaRequestId}`)
 
     const method = event.httpMethod
     if (event.resource === "/products"){
